@@ -1,0 +1,21 @@
+.arcgisMap {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    :global{
+        .esri-component{
+            &.esri-attribution{
+                &.esri-widget {
+                    display: none !important;
+                }
+            }
+        }
+        .esri-ui-bottom-right{
+            transition: all ,0.8s;
+        }
+    }
+    &.drawWait{
+        cursor: wait;
+    }
+}

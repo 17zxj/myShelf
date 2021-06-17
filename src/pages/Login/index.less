@@ -1,0 +1,613 @@
+.loginBox {
+  background: url('../../assets/login/background.png') 100% 100% no-repeat;
+  .loginTitle {
+    position: absolute;
+    z-index: 999;
+    top: 31%;
+    left: 33%;
+  }
+
+  .loginTitle2 {
+    position: absolute;
+    z-index: 999;
+    top: 41%;
+    left: 11%;
+  }
+
+  .videoFixed {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+
+    video {
+      max-width: 100%;
+      pointer-events: none;
+    }
+  }
+
+  .loginMain {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    vertical-align: middle;
+    // background: transparent url(../../assets/images/back.png) no-repeat; //登录页背景图替换_zxj
+    background-size: auto;
+
+    .loginRight {
+      z-index: 999;
+      position: absolute;
+      left: 50%;
+      top: 398px;
+      transform: translateX(-50%);
+      width: 420px;
+      border-radius: 6px;
+      .loginForm {
+        h1 {
+          text-align: center;
+          font-size: 24px;
+          font-family: MicrosoftYaHei;
+          color: rgba(37, 200, 254, 1);
+          letter-spacing: 4px;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .inputHoshi {
+          .inputHoshiInput {
+            display: block;
+            float: right;
+            padding: 0.8em;
+            width: 60%;
+            border: none;
+            border-radius: 0;
+            background: #f0f0f0;
+            color: #aaa;
+            font-weight: bold;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            -webkit-appearance: none;
+            margin-top: 1em;
+            padding: 0.85em 0.15em;
+            width: 100%;
+            background: rgb(206, 16, 16);
+            color: #595f6e;
+            position: relative;
+          }
+
+          .inputHoshiInput:focus {
+            outline: 0;
+          }
+
+          .label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 0 0.25em;
+            height: calc(100% - 1em);
+            text-align: left;
+            pointer-events: none;
+            background: antiquewhite;
+
+            span {
+              display: block;
+              padding: 1.6em 0;
+              width: 100%;
+            }
+          }
+
+          .label:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 10px);
+            border-bottom: 1px solid #b9c1ca;
+          }
+
+          .label:after {
+            margin-top: 2px;
+            border-bottom: 4px solid red;
+            -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+            -webkit-transition: -webkit-transform 0.3s;
+            transition: transform 0.3s;
+          }
+        }
+
+        .loginLabel {
+          margin-top: 34px;
+          display: block;
+          color: #fff;
+          line-height: 1;
+          position: relative;
+
+          .icon {
+            transform: translateY(27px);
+            color: #25c8fe;
+          }
+
+          .myIcon {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 54px;
+            height: 52px;
+            position: absolute;
+            background: #1199FF;
+            img {
+              max-width: 100%;
+            }
+          }
+
+          .labelTitle {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: inline-block;
+          }
+
+          span {
+            input {
+              display: block;
+              width: 100%;
+              border: none;
+              outline: none;
+              color: #000;
+              font-size: 20px;
+              padding: 5px 5px 5px 63px;
+              transition: all 0.3s;
+              height: 52px;
+              border: 1px solid #D8D8D8;
+              border-radius: 1px;
+            }
+
+            input:hover {
+              border-bottom: 1px solid rgba(218, 218, 218, 0.8);
+            }
+
+            .vcodeInput {
+              width: 240px;
+            }
+          }
+        }
+
+        .disFlex {
+          display: flex;
+
+          span {
+            flex: 1;
+          }
+
+          .Vcode {
+            margin-left: 16px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+          }
+          .codeCover{
+            width: 116px;
+            height: 52px;
+            background-color: transparent;
+            display: inline-block;
+            margin-left: -116px;
+            z-index: 999;
+          }
+        }
+
+        .remberPass {
+          display: inline-block !important;
+          vertical-align: baseline;
+          margin-right: 10px;
+
+          :global {
+            .ant-checkbox-inner {
+              width: 18px;
+              height: 18px;
+              background: #0E4461;
+              border: 2px solid #006688;
+              border-radius: 3px;
+            }
+
+            .ant-checkbox-checked::after {
+              border: 0;
+            }
+          }
+        }
+
+        .loginLodingBox {
+          margin: 55px auto 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 30px;
+
+          .lineScalePulseOut {
+            display: flex;
+            align-items: center;
+          }
+
+          .lineScalePulseOut>div {
+            width: 4px;
+            height: 30px;
+            background: rgba(24, 144, 255, 0);
+            display: inline-block;
+            margin: 0 4px;
+            border-radius: 1px;
+            box-shadow: 0 0 5px 1px #3aa0cc;
+            animation: loding 0.6s ease infinite alternate;
+          }
+
+          .lineScalePulseOut>div:nth-child(1),
+          .lineScalePulseOut>div:nth-child(5) {
+            animation-delay: 0.4s;
+          }
+
+          .lineScalePulseOut>div:nth-child(2),
+          .lineScalePulseOut>div:nth-child(4) {
+            animation-delay: 0.2s;
+          }
+        }
+
+        @keyframes loding {
+          0% {
+            height: 5px;
+          }
+
+          100% {
+            height: 30px;
+          }
+        }
+
+        .loginButton {
+          display: block;
+          text-align: center;
+          outline: 0;
+          border: 0;
+          cursor: pointer;
+          font-size: 20px;
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          color: #FFFFFF;
+          width: 100%;
+          margin-top: 40px;
+          height: 56px;
+          background: #1199FF;
+          box-shadow: 0px 0px 3px 0px rgba(35, 24, 21, 0.47);
+          border-radius: 4px;
+        }
+
+        .loginButton:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .clickLoginImg {
+      display: block;
+      cursor: pointer;
+      margin: 0 auto;
+      z-index: 999;
+    }
+  }
+
+  .loginBottom {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #222222;
+    text-align: right;
+  }
+}
+
+// 大屏
+.loginBoxBig {
+  width: 1920px;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+
+  .loginTitle {
+    position: absolute;
+    z-index: 999;
+    top: 31%;
+    left: 33%;
+  }
+
+  .loginTitle2 {
+    position: absolute;
+    z-index: 999;
+    top: 41%;
+    left: 11%;
+  }
+
+  .loginMain {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    vertical-align: middle;
+    // background: transparent url(../../assets/images/back.png) no-repeat; //登录页背景图替换_zxj
+    background-size: auto;
+
+    .loginRight {
+      z-index: 999;
+      position: absolute;
+      right: 120px;
+      top: 31%;
+      width: 398px;
+      padding: 20px 30px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 6px;
+      animation: myRightIn 1s linear;
+      -moz-animation: myRightIn 1s linear;
+      /* Firefox */
+      -webkit-animation: myRightIn 1s linear;
+      /* Safari and Chrome */
+      -o-animation: myRightIn 1s linear;
+
+      .loginTitleBtn {}
+
+      .loginForm {
+        h1 {
+          text-align: center;
+          font-size: 24px;
+          font-family: MicrosoftYaHei;
+          color: rgba(37, 200, 254, 1);
+          letter-spacing: 4px;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .inputHoshi {
+          .inputHoshiInput {
+            display: block;
+            float: right;
+            padding: 0.8em;
+            width: 60%;
+            border: none;
+            border-radius: 0;
+            background: #f0f0f0;
+            color: #aaa;
+            font-weight: bold;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            -webkit-appearance: none;
+            margin-top: 1em;
+            padding: 0.85em 0.15em;
+            width: 100%;
+            background: rgb(206, 16, 16);
+            color: #595f6e;
+            position: relative;
+          }
+
+          .inputHoshiInput:focus {
+            outline: 0;
+          }
+
+          .label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 0 0.25em;
+            height: calc(100% - 1em);
+            text-align: left;
+            pointer-events: none;
+            background: antiquewhite;
+
+            span {
+              display: block;
+              padding: 1.6em 0;
+              width: 100%;
+            }
+          }
+
+          .label:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 10px);
+            border-bottom: 1px solid #b9c1ca;
+          }
+
+          .label:after {
+            margin-top: 2px;
+            border-bottom: 4px solid red;
+            -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+            -webkit-transition: -webkit-transform 0.3s;
+            transition: transform 0.3s;
+          }
+        }
+
+        .loginLabel {
+          margin-top: 20px;
+          display: block;
+          color: #fff;
+          line-height: 1;
+
+          .icon {
+            transform: translateY(27px);
+            color: #25c8fe;
+          }
+
+          .myIcon {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 51px;
+            height: 48px;
+            background: rgba(173, 173, 173, 1);
+            border-radius: 4px;
+            position: absolute;
+          }
+
+          .labelTitle {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: inline-block;
+          }
+
+          span {
+            input {
+              display: block;
+              width: 100%;
+              border: none;
+              outline: none;
+              background: #ffffff;
+              color: #222222;
+              font-size: 20px;
+              padding: 5px 5px 5px 30px;
+              transition: all 0.3s;
+              border-radius: 4px;
+              height: 48px;
+              padding-left: 73px;
+            }
+
+            input:hover {
+              border-bottom: 1px solid rgba(218, 218, 218, 0.8);
+            }
+
+            .vcodeInput {
+              padding-left: 30px;
+            }
+          }
+        }
+
+        .disFlex {
+          display: flex;
+
+          span {
+            flex: 1;
+          }
+
+          .Vcode {
+            margin-left: 16px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+          }
+        }
+
+        .remberPass {
+          display: inline-block !important;
+          vertical-align: baseline;
+          margin-right: 10px;
+
+          :global {
+            .ant-checkbox-inner {
+              border-radius: 50%;
+            }
+
+            .ant-checkbox-checked::after {
+              border: 0;
+            }
+          }
+        }
+
+        .loginLodingBox {
+          margin: 55px auto 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 30px;
+
+          .lineScalePulseOut {
+            display: flex;
+            align-items: center;
+          }
+
+          .lineScalePulseOut>div {
+            width: 4px;
+            height: 30px;
+            background: rgba(24, 144, 255, 0);
+            display: inline-block;
+            margin: 0 4px;
+            border-radius: 1px;
+            box-shadow: 0 0 5px 1px #3aa0cc;
+            animation: loding 0.6s ease infinite alternate;
+          }
+
+          .lineScalePulseOut>div:nth-child(1),
+          .lineScalePulseOut>div:nth-child(5) {
+            animation-delay: 0.4s;
+          }
+
+          .lineScalePulseOut>div:nth-child(2),
+          .lineScalePulseOut>div:nth-child(4) {
+            animation-delay: 0.2s;
+          }
+        }
+
+        @keyframes loding {
+          0% {
+            height: 5px;
+          }
+
+          100% {
+            height: 30px;
+          }
+        }
+
+        .loginButton {
+          display: block;
+          text-align: center;
+          outline: 0;
+          border: 0;
+          background: linear-gradient(0deg, #6E54FF 2%, #28B3E3, #3ECDFF);
+          width: 100%;
+          color: #fff;
+          font-size: 18px;
+          height: 48px;
+          cursor: pointer;
+          margin-top: 12px;
+          transition: all 0.3s;
+          border-radius: 10px;
+        }
+
+        .loginButton:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .clickLoginImg {
+      display: block;
+      cursor: pointer;
+      margin: 0 auto;
+      z-index: 999;
+    }
+  }
+
+  .loginBottom {
+
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #222222;
+    text-align: right;
+  }
+}
+
+.videoFixed {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 9;
+
+  video {
+    max-width: 100%;
+    pointer-events: none;
+  }
+}
+
+@keyframes myRightIn {
+  0% {
+    position: absolute;
+    right: 0;
+  }
+
+  100% {
+    position: absolute;
+    right: 120px;
+  }
+}

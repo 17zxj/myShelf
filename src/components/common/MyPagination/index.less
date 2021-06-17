@@ -1,0 +1,19 @@
+@import "../../../less/variables";
+
+.myPage {
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 10px;
+  width: 99%;
+  :global {
+    .ant-pagination-options {
+      .ant-select {
+        width: auto;
+      }
+    }
+    li.ant-pagination-item {
+      line-height: 26px !important;
+    }
+  }
+}

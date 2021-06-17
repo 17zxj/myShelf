@@ -1,0 +1,85 @@
+@import '../../../../node_modules/antd/lib/style/themes/default.less';
+@import "../../../less/variables.less";
+
+
+
+.nav {
+  user-select: none;
+  .menuItemIcon{
+    margin-right: 12px;
+    font-size: 18px;
+    position: relative;
+    top: 2px;
+  }
+  .wp-nav-font{
+    font-size: 16px;
+  }
+  &.collapsedNav{
+    .wp-nav-font{
+      display: inline-block;
+      max-width: 0;
+      opacity: 0;
+    }
+  }
+  :global {
+    .ant-menu-submenu > .ant-menu{
+      background: @side-background;
+    }
+    .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+      border-right: none;
+      background: @side-background;
+      .ant-menu-submenu-title{
+        opacity: 0.7;
+        color: #FFFFFF;
+        &:active{
+          background: @side-sub-active-background;
+        }
+        .ant-menu-submenu-arrow::before, .ant-menu-submenu-arrow::after{
+          background: #FFFFFF ;
+          background-image: linear-gradient(to right, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65));
+        }
+      }
+      .ant-menu-item{
+        a{
+          opacity: 0.7;
+          color: #FFFFFF;
+        }
+      }
+    }
+    .ant-menu-item .sider-menu-item-img + span,
+    .ant-menu-submenu-title .sider-menu-item-img + span {
+      // transition: opacity 0.3s @ease-in-out, width 0.3s @ease-in-out;
+    }
+    .ant-menu-submenu-active{
+      background: @side-sub-active-background;
+      .ant-menu-submenu-title{
+        opacity: 1;
+        .ant-menu-submenu-arrow::before, .ant-menu-submenu-arrow::after{
+          background: #FFFFFF ;
+          background-image: linear-gradient(to right, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65));
+        }
+      }
+      .ant-menu-item{
+        a{
+          opacity: 1;
+        }
+      }
+    }
+    .ant-menu-submenu-open{
+      .ant-menu-sub{
+        background: @side-sub-background;
+      }
+      .ant-menu-item-selected, .ant-menu-item-active{
+        background: @side-sub-active-background !important;
+        a{
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+ 
+}
+.navItem{
+  margin-right: 8px;
+}
+

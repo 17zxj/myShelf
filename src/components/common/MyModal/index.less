@@ -1,0 +1,83 @@
+@import '~antd/lib/style/themes/default.less';
+
+.commonModal {
+  :global {
+    .ant-form-item{
+      margin-bottom: 18px !important;
+      height: 30px;
+    }
+    .ant-modal-content {
+      //width: 640px;
+      border-radius: 4px;
+      .ant-modal-close {
+        background-color: #fff;
+        height: 16px;
+        width: 16px;
+        border-radius: 8px;
+        right: 16px;
+        top: 12px;
+        .ant-modal-close-x {
+          height: 16px;
+          width: 16px;
+          color: var(--antd-wave-shadow-color);
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+    }
+    .ant-modal-body {
+      padding: 0px;
+      max-height: 75vh;
+      overflow-y: auto;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .ant-modal-header {
+      background-color: var(--antd-wave-shadow-color);
+      height: 38px;
+      display: flex;
+      align-items: center;
+      border-radius: 2px 2px 0 0;
+      .ant-modal-title {
+        color: #FEFEFE;
+        font-weight: normal;
+      }
+    }
+    .ant-modal-footer {
+      border-top: none;
+      padding-bottom: 20px;
+      padding-top: 0;
+    }
+  }
+  .saveBtn, .submitBtn {
+    background: var(--antd-wave-shadow-color);
+    border-color: var(--antd-wave-shadow-color);
+    box-shadow: @box-shadow-base;
+    height: 30px;
+    min-width: 74px;
+    border-radius: 2px;
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  .saveBtn:hover, .saveBtn:focus, .submitBtn:hover, .submitBtn:focus {
+    border-color: white;
+    background: @primary-color;
+  }
+
+  .cancelBtn {
+    background-color: #fff !important;
+    height: 30px;
+    width: 74px;
+    margin-left: 20px;
+    border-radius: 2px;
+    color: #222222 !important;
+  }
+
+  .cancelBtn:hover, .cancelBtn:focus {
+    border-color: white;
+  }
+
+  .showCenter {
+    text-align: center;
+  }
+}
